@@ -16,7 +16,7 @@
                 <i class="ki-outline ki-abstract-14 fs-2"></i>
             </div>
 
-            <a href="index.html" class="app-sidebar-logo">
+            <a href="{{ route('admin.index') }}" class="app-sidebar-logo">
                 <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProLight.png') }}" class="h-25px theme-light-show">
                 <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProDark.png') }}" class="h-25px theme-dark-show">
             </a>
@@ -48,29 +48,25 @@
                             <!--begin::Username-->
                             <div class="d-flex flex-column">
                                 <div class="fw-bold d-flex align-items-center fs-5">
-                                    Max Smith <span
+                                    {{ Auth::user()->name }} <span
                                         class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                                 </div>
 
-                                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">
-                                    max@kt.com </a>
+                                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
                             </div>
                             <!--end::Username-->
                         </div>
                     </div>
                     <!--end::Menu item-->
 
-                    <!--begin::Menu separator-->
-                    <div class="separator my-2"></div>
-                    <!--end::Menu separator-->
-
-                    <!--begin::Menu item-->
-                    <div class="menu-item px-5">
-                        <a href="account/overview.html" class="menu-link px-5">
-                            My Profile
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
+                    @if (Auth::user()->role == 'admin')
+                        <div class="separator my-2"></div>
+                        <div class="menu-item px-5">
+                            <a href="account/overview.html" class="menu-link px-5">
+                                Meu Petshop
+                            </a>
+                        </div>
+                    @endif
 
                     <!--begin::Menu separator-->
                     <div class="separator my-2"></div>
@@ -140,7 +136,7 @@
                     <!--begin::Menu item-->
                     <div class="menu-item px-5">
                         <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">
-                            Sign Out
+                            Sair
                         </a>
                     </div>
                     <!--end::Menu item-->
