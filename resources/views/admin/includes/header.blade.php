@@ -1,10 +1,8 @@
 <div id="kt_app_header" class="app-header  d-flex flex-column flex-stack ">
 
-    <!--begin::Header main-->
     <div class="d-flex flex-stack flex-grow-1">
 
         <div class="app-header-logo d-flex align-items-center ps-lg-12" id="kt_app_header_logo">
-            <!--begin::Sidebar toggle-->
             <div id="kt_app_sidebar_toggle"
                 class="app-sidebar-toggle btn btn-sm btn-icon bg-body btn-color-gray-500 btn-active-color-primary w-30px h-30px ms-n2 me-4 d-none d-lg-flex "
                 data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
@@ -12,32 +10,27 @@
 
                 <i class="ki-outline ki-abstract-14 fs-3 mt-1"></i>
             </div>
-            <!--end::Sidebar toggle-->
 
-            <!--begin::Sidebar mobile toggle-->
             <div class="btn btn-icon btn-active-color-primary w-35px h-35px ms-3 me-2 d-flex d-lg-none"
                 id="kt_app_sidebar_mobile_toggle">
                 <i class="ki-outline ki-abstract-14 fs-2"></i>
             </div>
-            <!--end::Sidebar mobile toggle-->
 
-            <!--begin::Logo-->
             <a href="index.html" class="app-sidebar-logo">
-                <img alt="Logo" src="assets/media/logos/demo39.svg" class="h-25px theme-light-show">
-                <img alt="Logo" src="assets/media/logos/demo39-dark.svg" class="h-25px theme-dark-show">
+                <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProLight.png') }}" class="h-25px theme-light-show">
+                <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProDark.png') }}" class="h-25px theme-dark-show">
             </a>
-            <!--end::Logo-->
         </div>
 
         <!--begin::Navbar-->
         <div class="app-navbar flex-grow-1 justify-content-end" id="kt_app_header_navbar">
-            
+
             <div class="app-navbar-item ms-2 ms-lg-6" id="kt_header_user_menu_toggle">
                 <!--begin::Menu wrapper-->
                 <div class="cursor-pointer symbol symbol-circle symbol-30px symbol-lg-45px"
                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
                     data-kt-menu-placement="bottom-end">
-                    <img src="assets/media/avatars/300-2.jpg" alt="user">
+                    <img src="{{ asset('assets/media/avatars/300-2.jpg') }}" alt="user">
                 </div>
 
                 <!--begin::User account menu-->
@@ -48,7 +41,7 @@
                         <div class="menu-content d-flex align-items-center px-3">
                             <!--begin::Avatar-->
                             <div class="symbol symbol-50px me-5">
-                                <img alt="Logo" src="assets/media/avatars/300-2.jpg">
+                                <img alt="Logo" src="{{ asset('assets/media/avatars/300-2.jpg') }}">
                             </div>
                             <!--end::Avatar-->
 
@@ -159,12 +152,13 @@
 
             <!--begin::Action-->
             <div class="app-navbar-item ms-2 ms-lg-6 me-lg-6">
-                <!--begin::Link-->
-                <a href="authentication/layouts/corporate/sign-in.html"
-                    class="btn btn-icon btn-custom btn-color-gray-600 btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
-                    <i class="ki-outline ki-exit-right fs-1"></i>
-                </a>
-                <!--end::Link-->
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit"
+                        class="btn btn-icon btn-custom btn-color-gray-600 btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
+                        <i class="ki-outline ki-exit-right fs-1"></i>
+                    </button>
+                </form>
             </div>
             <!--end::Action-->
 

@@ -3,13 +3,31 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('admin.home');
+
+Route::prefix('/admin')->middleware(['userType:admin,employee,superadmin'])->group(function () {
+
+    Route::get('/', function () {
+        return view('admin.home');
+    })->name('admin.index');
+
+    Route::get('/servicos', function () {
+        return view('admin.home');
+    })->name('admin.servicos');
+
+    Route::get('/atendimentos', function () {
+        return view('admin.home');
+    })->name('admin.atendimentos');
+
+    Route::get('/profissionais', function () {
+        return view('admin.home');
+    })->name('admin.profissionais');
+
+    Route::get('/financeiro', function () {
+        return view('admin.home');
+    })->name('admin.financeiro');
+
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -11,46 +11,45 @@
         <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
             class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary px-6 mb-5">
 
-            
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion hover">
-                <span class="menu-link">
+            <div class="menu-item menu-accordion hover">
+                <a href="{{ route('admin.index') }}" class="menu-link">
                     <span class="menu-icon">
                         <i class="ki-outline ki-home-2 fs-2"></i>
                     </span>
                     <span class="menu-title">Início</span>
-                </span>
+                </a>
             </div>
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <span class="menu-link">
+            <div class="menu-item menu-accordion">
+                <a href="{{ route('admin.servicos') }}" class="menu-link">
                     <span class="menu-icon">
                         <i class="ki-outline ki-filter-tick fs-2"></i>
                     </span>
                     <span class="menu-title">Serviços</span>
-                </span>
+                </a>
             </div>
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <span class="menu-link">
+            <div class="menu-item menu-accordion">
+                <a href="{{ route('admin.atendimentos') }}" class="menu-link">
                     <span class="menu-icon">
                         <i class="ki-outline ki-calendar fs-2"></i>
                     </span>
                     <span class="menu-title">Atendimentos</span>
-                </span>
+                </a>
             </div>
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <span class="menu-link">
+            <div class="menu-item menu-accordion">
+                <a href="{{ route('admin.profissionais') }}" class="menu-link">
                     <span class="menu-icon">
                         <i class="ki-outline ki-profile-user fs-2"></i>
                     </span>
                     <span class="menu-title">Profissionais</span>
-                </span>
+                </a>
             </div>
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <span class="menu-link">
+            <div class="menu-item menu-accordion">
+                <a href="{{ route('admin.financeiro') }}" class="menu-link">
                     <span class="menu-icon">
                         <i class="ki-outline ki-dollar fs-2"></i>
                     </span>
                     <span class="menu-title">Financeiro</span>
-                </span>
+                </a>
             </div>
         </div>
     </div>
