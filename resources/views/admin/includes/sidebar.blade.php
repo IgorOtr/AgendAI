@@ -32,7 +32,7 @@
                     <span class="menu-icon">
                         <i class="ki-outline ki-calendar fs-2"></i>
                     </span>
-                    <span class="menu-title">Atendimentos</span>
+                    <span class="menu-title">Agendamentos</span>
                 </a>
             </div>
             <div class="menu-item menu-accordion">

@@ -17,8 +17,8 @@
             </div>
 
             <a href="{{ route('admin.index') }}" class="app-sidebar-logo">
-                <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProLight.png') }}" class="h-25px theme-light-show">
-                <img alt="Logo" src="{{ asset('assets/media/logos/logoPetProDark.png') }}" class="h-25px theme-dark-show">
+                <img alt="Logo" src="{{ asset('assets/media/logos/logo-agendai-light.png') }}" class="h-25px theme-light-show">
+                <img alt="Logo" src="{{ asset('assets/media/logos/logo-agendai-dark.png') }}" class="h-25px theme-dark-show">
             </a>
         </div>
 
